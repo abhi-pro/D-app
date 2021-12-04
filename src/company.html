@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Home</title>
+</head>
+<body>
+  <div class="container-fluid">
+      <!-- 
+         This div contains the nav bar and all its elements.
+      -->
+    <div class="row min-vh-100 flex-column flex-md-row">
+      <aside class="col-12 col-md-3 col-xl-2 p-0 bg-dark flex-shrink-1">
+        <nav class="navbar navbar-expand-md navbar-dark bd-dark flex-md-column flex-row align-items-center py-2 text-center sticky-top" id="sidebar">
+          <div class="text-center p-3">
+            <!-- 
+            This div contains the logo of our navbar.
+            -->
+            <img src="iitb.png" alt="pofile picture" class="img-fluid my-4 p-1 d-done d-md-block shadow">
+            <a href="#" class="navbar-brand mx-0 font-weight-bold text-nowrap">Go to main site</a>        
+          </div>
+          <button type="button" class="navbar-toggler border-0 order-1" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse order-last" id="nav">
+            <ul class="navbar-nav flex-column w-100 justify-content-center">
+              <!-- 
+              This div contains the list of all the elements of navbar.The elements are Home,Student's Regstration
+              HOD's Regstration,Companie's Regstration,HOD's Verification,Director's Verification and About Project.
+              -->
+              <li class="nav-item">
+                <a href="index.html"class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="student.html"class="nav-link"> Student's Regstration</a>
+              </li>
+              <li class="nav-item">
+                <a href="HodApplication.html"class="nav-link"> HOD's Regstration</a>
+              </li>
+              <li class="nav-item">
+                <a href="company.html"class="nav-link">Companie's Regstration</a>
+              </li>
+              <li class="nav-item">
+                <a href="VerifyStudentorDegree.html"class="nav-link">HOD's Verification</a>
+              </li>
+              <li class="nav-item">
+                <a href="directorveification.html"class="nav-link">Director's Verification</a>
+              </li>
+              <li class="nav-item">
+                <a href="#"class="nav-link">About Project</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+      <main class="col px-0 flex-grow-1">
+        <div class="container py-3">
+            <div class="form1">
+                <div class="regform"><h4>Company Registration Form</h4></div>
+                <div class="main">
+                  <!-- 
+                   This div contains the registration form for company enrollment like name,registration no,
+                   date of establishment,domain of work,location.
+                  -->
+                <form onSubmit="App.addCompany(); return false;">
+                    <div>
+                        <h2 class="name">Company Name</h2>
+                        <input id="Cname" class="form-control"type="text" placeholder="Enter Company name">
+                    </div>
+                    <h2 class="name">Date of Establishment</h2>
+                    <input id="YOE" class="form-control"type="date" placeholder="Enter the Date of Estalblishment">
+                    <h2 class="name">Domain of Work</h2>
+                    <input id = "Domain" class="form-control"type="text" placeholder="Enter Company Domain of Work">
+                    <h2 class="name">Location</h2>
+                    <input id = "Location" class="form-control"type="text" placeholder="Enter Company Location">
+                    <button>Submit</button><br><br>
+                    If your company is verified by Institute/Director&nbsp;&nbsp;&nbsp;&nbsp; <br>
+                    <a href="requeststdentinfo.html">Request for Student Details</a><br>
+                    <!-- This link contains the link to request for student information-->
+                </form>
+                </div>
+            </div>
+            <div class="form1">
+              <div class="regform1">
+                  <h4>Registed Company List</h4>
+              </div>
+              
+              
+              
+          <div class="main1">
+              <table class="table">
+            
+              </table>
+              <ul id="taskList">
+                <!-- 
+                 This table contains the company information of those companies who have applied for verification
+                 only the director can verify a company
+                -->
+              <div class="CompanyTemplate" class="table-responsive" style="display: none">
+              <table class="table">
+		<thead class="table-dark">
+                    <tr>
+                      <th scope="col">CRN</th>
+                      <th scope="col">C NAME</th>
+                      <th scope="col">ACCOUNT</th>
+                      <th scope="col">STATUS</th>
+                    </tr>
+                  </thead>  
+                  <tbody>
+                    <tr>
+                      <td class="comp_content2">1</td>
+                      <td class="comp_content3">Microsoft India</td>
+                      <td  class="comp_content1">123456789</td>
+                      <td  class="comp_content7">Pending</td>
+                    </tr>
+                  </tbody>
+              </table>
+              </div>
+              </ul>
+              <form onSubmit="App.CompanyApproval(); return false;">
+              <input class="form-control"type="number" placeholder="Enter Company ID To Verify The Listed Company" id="CompanyID">
+              <button>Verify</button>
+              </form>
+          </div>
+            </div>
+        </div>
+        
+        <!--
+        <div class="container py-3">
+            <div class="form1">
+                <div class="regform1">
+                    <h1>Registered Company List</h1>
+                </div>
+                <div class="main1">
+                	<ul id="taskList">
+                    <div class="CompanyTemplate" class="table-responsive" style="display: none">
+                        <table class="table align-middle">
+                          <thead class="table-dark">
+                            <tr class="name">
+                                <th scope="col">Account No</th>
+                                <th scope="col">Unique ID</th>
+                                <th scope="col">CRN Number</th>
+                                <th scope="col">Company Name</th>                             
+                                <th scope="col">Domain of Work</th>
+                                <th scope="col">Date of Establishment</th>  
+                                <th scope="col">Location</th>
+                                <th scope="col">Verified By Director</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="name">
+                                 <td class="comp_content1">content</td>
+                                 <td class="comp_content0">content</td>
+			   	  <td class="comp_content2">content</td>
+			    	  <td class="comp_content3">content</td>
+			    	  <td class="comp_content4">content</td>		
+			    	  <td class="comp_content5">content</td>
+			    	  <td class="comp_content6">content</td>
+			    	  <td class="comp_content7">content</td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                         </ul>
+                        <h2 class="regform3">Approve Company</h2>
+                        <h2 class="name">Registration number of the Company</h2>
+                        <form onSubmit="App.CompanyApproval(); return false;">
+                        <input class="form-control" id="Comp" type="number" placeholder="Enter Registration number of the Company" >
+                        <button class="class1" >Approved By Director</button>  
+                       </form>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>-->
+        
+        
+        
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/web3/dist/web3.min.js"></script> 
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
